@@ -8,6 +8,10 @@ class Ability
         can :manage, :all
     else
         can :read, Article
+        can :create, Article
+        can :update, Article do |article|
+            article.user == user
+        end
     end
 
     # Define abilities for the passed in user here. For example:
