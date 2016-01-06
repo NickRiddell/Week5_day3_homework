@@ -1,0 +1,12 @@
+<h1><%= @article.title %></h1>
+<p><%= @article.content %></p>
+
+<h2>Comments:</h2>
+
+<% @article.comments.each do |comment| %>
+  <p><%= comment.content %><p>
+  <p><%= link_to 'Edit Comment', edit_comment_path(comment) %></p>
+  <br>
+<% end %>
+
+<p><%= link_to 'Add Comment', new_comment_path %></p>

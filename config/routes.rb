@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'article/index'
 
   devise_for :users
-  resources :articles
+  resources :articles, :comments
   root to: "home#index"
   
   # The priority is based upon order of creation: first created -> highest priority.

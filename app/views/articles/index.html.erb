@@ -2,7 +2,7 @@
 
 <% @articles.each do |article| %>
   <p><%= article.title %><p>
-  <p><%= article.content %><p>
+  <p><%= link_to 'Show article', article_path(article) %></p>
   <p><%= link_to 'Edit', edit_article_path(article) %></p>
   <br>
 <% end %>
