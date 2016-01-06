@@ -13,8 +13,7 @@ class ArticlesController < ApplicationController
 
   def create
     authorize! :create, Article
-    a = Article.create(article_params)
-    a.update_attribute(:user_id,current_user.id)
+    current_user.articles.create(article_params)
     redirect_to(articles_path)
   end
 
