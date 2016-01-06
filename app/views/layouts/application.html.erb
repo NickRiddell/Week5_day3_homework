@@ -22,10 +22,16 @@
   </div>
 
   <nav>
+  <div class="go-left">
+    <div class="logo">
+      <%= link_to(image_tag("https://www.seoclerk.com/pics/181843-1y59TX1391507845.png"), articles_path) %>
+    </div>
+  </div>
+  <div class="go-right">
     <ul>
-      <li><%= link_to 'Read articles', articles_path %></li>
       <li><%= link_to 'Create article', new_article_path %></li>
     </ul>
+    </div>
   </nav>
 
   <%= yield %>

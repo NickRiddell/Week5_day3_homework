@@ -1,11 +1,18 @@
 <h1><%= @article.title %></h1>
+<div class="article-img-link">
+<%= image_tag(@article.image, alt:"No image", width:"600px", class: "article-img") %>
+</div>
 <p><%= @article.content %></p>
 
 <h2>Comments:</h2>
 
 <% @article.comments.each do |comment| %>
   <p><%= comment.content %><p>
-  <p><%= link_to 'Edit Comment', edit_comment_path(comment) %></p>
+  <div class="edit-comment">
+    <% if can? :edit, Comment %> 
+      <%= link_to 'Edit Comment', edit_comment_path(comment) %>
+    <% end %>
+  </div>
   <br>
 <% end %>
 
