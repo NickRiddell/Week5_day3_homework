@@ -7,10 +7,13 @@ class Ability
     if user.role? :admin
         can :manage, :all
     else
-        can :read, Article
-        can :create, Article
+        can :read, [Article, Comment]
+        can :create, [Article, Comment]
         can :update, Article do |article|
             article.user == user
+        end
+        can :update, Comment do |comment|
+            comment.user == user
         end
     end
 
