@@ -5,3 +5,7 @@
   <p><%= article.content %><p>
   <br>
 <% end %>
+
+<% if can? :create, Article %> 
+  <%= link_to "New article", new_article_path %> 
+<% end %>
