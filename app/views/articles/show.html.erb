@@ -9,4 +9,10 @@
   <br>
 <% end %>
 
-<p><%= link_to 'Add Comment', new_comment_path %></p>
+<%= form_tag("/comments", method: "post") do %>
+  <%= hidden_field_tag(name="article_id", value =  @article.id ) %>
+  <%= label_tag(:content, "Your Comment:") %>
+  <%= text_field_tag(:content) %>
+  <br>
+  <%= submit_tag("Submit") %>
+<% end %>
