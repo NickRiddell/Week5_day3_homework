@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'devise'
 gem 'cancan'
+gem 'seed_dump'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
